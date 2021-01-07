@@ -13,11 +13,11 @@ const Grid = styled.div`
 
   .column__logo {
     grid-column: 1 / 11;
+    padding: 2rem 0;
     ${mediaHelper().tablet(`
       grid-column: 1 / 5;
-    
+      padding: 1.4rem 0;
     `)}
-    padding: 2rem 0;
     display: flex;
     align-items: center;
     h1 {
@@ -72,7 +72,7 @@ const Grid = styled.div`
       display: none;
     
     `)}
-      font-size: 2rem;
+      font-size: 1.35rem;
       svg {
         display: block;
       }
