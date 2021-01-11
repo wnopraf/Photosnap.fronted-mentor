@@ -50,6 +50,7 @@ const Grid = styled.div`
     position: relative;
     height: 100%;
     background-color: black;
+    padding: 8rem 0;
     
 }
 
