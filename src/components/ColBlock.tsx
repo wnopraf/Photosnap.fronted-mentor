@@ -20,6 +20,9 @@ const StyledColBlock = styled.article<{
     padding: 0 4rem;
     position: relative;
 `)}
+  ${mediaHelper().lageDesktop(`
+padding: 0 5rem;
+`)}
   ${(props) =>
     props.isGradientBorder
       ? `&:before {
@@ -54,6 +57,9 @@ const StyledColBlock = styled.article<{
     ${mediaHelper().tablet(`
   font-size: 2rem;
   `)}
+    ${mediaHelper().lageDesktop(`
+font-size: 2.5rem;
+`)}
   }
 
   p {
