@@ -5,35 +5,55 @@ import '../index.css'
 import Logo from './Logo'
 import { mediaHelper } from '../lib/responsive'
 import personBg from '../images/person.jpg'
-
+import { ColBlock } from './ColBlock'
+import text from '../text.json'
 const Grid = styled.div`
   display: grid;
   align-items: center;
 
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: auto;
-
+  grid-template-columns: repeat(100, 1fr);
+  grid-template-rows: 592px 837px repeat(2,547px 837px);
+  ${mediaHelper().tablet(`
+  grid-template-rows: repeat(3,650px);
+  
+  
+  `)}
   .column__lake {
-    grid-column: 1 / 13;
-    height: 589px;
+    grid-column: 1 / 101;
+    grid-row: 1 / 2;
+    ${mediaHelper().tablet(`
+    
+      grid-column: 65 / 101;
+    `)}
+    ${mediaHelper().desktop(`
+    grid-column: 42 / 101;
+    `)}
+    height: 100%;
     background-image: url(${personBg});
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
   }
   .column__share {
-    grid-column: 1 / 13;
+    grid-column: 1 / 101;
+    grid-row: 2 / 3;
+    ${mediaHelper().tablet(`
+    
+      grid-column: 1 / 65;
+      grid-row: 1 / 2;
+    `)}
+    ${mediaHelper().desktop(`
+    grid-column: 1 / 42;
+    `)}
+    display: flex;
+    align-items: center;
     position: relative;
-    height: 835px;
+    height: 100%;
     background-color: black;
-    &:after {
-      content: '';
-      position: absolute;
-      height: 12px;
-      width: 100px;
-      top: 0px;
-      left: 1rem;
-      background-image: linear-gradient(to right, orange, purple 30%);
+    
+}
+
+
     }
   }
   .column__mac {
@@ -55,7 +75,16 @@ export const Layout = () => {
     <>
       <Grid>
         <div className="column__lake"></div>
-        <div className="column__share"></div>
+        <div className="column__share">
+          <ColBlock
+            headerText={text.lakeCol.headerText}
+            pText={text.lakeCol.pText}
+            linkText={text.lakeCol.linkText}
+            isGradientBorder={true}
+            color="white"
+            bg="black"
+          />
+        </div>
         <div className="column__mac"></div>
         <div className="column__beatiful"></div>
         <div className="column__photo-maker"></div>
