@@ -12,7 +12,7 @@ const Grid = styled.div`
   align-items: center;
 
   grid-template-columns: repeat(100, 1fr);
-  grid-template-rows: 592px 837px repeat(2,547px 837px);
+  grid-template-rows: 592px auto repeat(2,547px auto);
   ${mediaHelper().tablet(`
   grid-template-rows: repeat(3,650px);
   
