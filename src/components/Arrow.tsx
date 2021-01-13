@@ -11,13 +11,18 @@ export const Arrow = () => (
       </style>
     </defs>
     <g transform="translate(-376 -479.303)">
-      <path className="a" d="M0,0H80" transform="translate(376 496)" />
+      <path stroke="currentcolor" d="M0,0H80" transform="translate(376 496)" />
       <path
-        className="b"
+        stroke="currentcolor"
         d="M11,16,5.675,8,0,0"
         transform="translate(445 480)"
       />
-      <line className="a" x1="11" y2="16" transform="translate(445 496)" />
+      <line
+        stroke="currentcolor"
+        x1="11"
+        y2="16"
+        transform="translate(445 496)"
+      />
     </g>
   </svg>
 )
