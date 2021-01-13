@@ -5,8 +5,11 @@ import '../index.css'
 import Logo from './Logo'
 import { mediaHelper } from '../lib/responsive'
 import personBg from '../images/person.jpg'
+import macBg from '../images/mac.jpg'
 import { ColBlock } from './ColBlock'
 import text from '../text.json'
+import { ColBg } from './ColBg'
+
 const Grid = styled.div`
   display: grid;
   align-items: center;
@@ -70,24 +73,62 @@ const Grid = styled.div`
     grid-column: 1 / 12;
   }
 `
-
+const ColWrapper = styled.div<{ row: string; bgColor: string; color: string }>`
+  grid-column: 1 / 101;
+  ${(props) => props.row}
+  ${mediaHelper().tablet(`
+    
+      grid-column: 1 / 65;
+      
+    `)}
+    ${mediaHelper().desktop(`
+    grid-column: 1 / 42;
+    `)}
+    display: flex;
+  align-items: center;
+  position: relative;
+  height: 100%;
+  color: ${(props) => props.color};
+  background-color: ${(props) => props.bgColor};
+  padding: 8rem 0;
+`
 export const Layout = () => {
   return (
     <>
       <Grid>
-        <div className="column__lake"></div>
-        <div className="column__share">
+        <ColBg bg={personBg} />
+        <ColWrapper
+          row={`grid-row: 2 / 3;
+    ${mediaHelper().tablet(`
+      grid-row: 1 / 2;
+    `)}`}
+          bgColor="black"
+          color="white"
+        >
           <ColBlock
             headerText={text.lakeCol.headerText}
             pText={text.lakeCol.pText}
             linkText={text.lakeCol.linkText}
             isGradientBorder={true}
-            color="white"
-            bg="black"
           />
-        </div>
-        <div className="column__mac"></div>
-        <div className="column__beatiful"></div>
+        </ColWrapper>
+
+        <ColBg bg={macBg} />
+        <ColWrapper
+          row={`grid-row: 4 / 5;
+    ${mediaHelper().tablet(`
+      grid-row: 2 / 3;
+    `)}`}
+          bgColor="white"
+          color="black"
+        >
+          <ColBlock
+            headerText={text.macCol.headerText}
+            pText={text.macCol.pText}
+            linkText={text.macCol.linkText}
+            isGradientBorder={false}
+          />
+        </ColWrapper>
         <div className="column__photo-maker"></div>
         <div className="column__design"></div>
       </Grid>

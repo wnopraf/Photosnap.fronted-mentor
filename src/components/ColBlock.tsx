@@ -4,12 +4,8 @@ import { mediaHelper } from '../lib/responsive'
 import { Arrow } from './Arrow'
 
 const StyledColBlock = styled.article<{
-  bg: string
-  color: string
   isGradientBorder: boolean
 }>`
-  color: ${(prop) => prop.color};
-  background-color: ${(prop) => prop.bg};
   width: 60%;
 
   margin-left: 4rem;
@@ -103,11 +99,10 @@ export const ColBlock: FunctionComponent<{
   headerText: string
   pText: string
   linkText: string
-  color: string
-  bg: string
+
   isGradientBorder: boolean
-}> = ({ headerText, pText, linkText, color, bg, isGradientBorder }) => (
-  <StyledColBlock color={color} bg={bg} isGradientBorder={isGradientBorder}>
+}> = ({ headerText, pText, linkText, isGradientBorder }) => (
+  <StyledColBlock isGradientBorder={isGradientBorder}>
     <h1>{headerText}</h1>
     <p>{pText}</p>
     <h3>
