@@ -6,6 +6,7 @@ import Logo from './Logo'
 import { mediaHelper } from '../lib/responsive'
 import personBg from '../images/person.jpg'
 import macBg from '../images/mac.jpg'
+import cameraBg from '../images/camera.jpg'
 import { ColBlock } from './ColBlock'
 import text from '../text.json'
 import { ColBg } from './ColBg'
@@ -73,22 +74,33 @@ const Grid = styled.div`
     grid-column: 1 / 12;
   }
 `
-const ColWrapper = styled.div<{ row: string; bgColor: string; color: string }>`
+const ColWrapper = styled.div<{
+  row: string
+  bgColor: string
+  fontColor: string
+  rowInverse: boolean
+}>`
   grid-column: 1 / 101;
   ${(props) => props.row}
-  ${mediaHelper().tablet(`
+  ${(props) =>
+    props.rowInverse
+      ? mediaHelper().tablet(`
     
-      grid-column: 1 / 65;
+      grid-column: 35 / 101;
       
-    `)}
-    ${mediaHelper().desktop(`
-    grid-column: 1 / 42;
-    `)}
+    `)
+      : mediaHelper().tablet(`grid-column: 1 / 65;`)}
+    ${(props) =>
+    props.rowInverse
+      ? mediaHelper().desktop(`
+    grid-column: 42 / 101;
+    `)
+      : mediaHelper().desktop('grid-column: 1 / 58;')}
     display: flex;
   align-items: center;
   position: relative;
   height: 100%;
-  color: ${(props) => props.color};
+  color: ${(props) => props.fontColor};
   background-color: ${(props) => props.bgColor};
   padding: 8rem 0;
 `
@@ -96,14 +108,15 @@ export const Layout = () => {
   return (
     <>
       <Grid>
-        <ColBg bg={personBg} />
+        <ColBg bg={personBg} rowInverse={false} />
         <ColWrapper
           row={`grid-row: 2 / 3;
     ${mediaHelper().tablet(`
       grid-row: 1 / 2;
     `)}`}
+          rowInverse={false}
           bgColor="black"
-          color="white"
+          fontColor="white"
         >
           <ColBlock
             headerText={text.lakeCol.headerText}
@@ -113,14 +126,15 @@ export const Layout = () => {
           />
         </ColWrapper>
 
-        <ColBg bg={macBg} />
+        <ColBg bg={macBg} rowInverse={true} />
         <ColWrapper
           row={`grid-row: 4 / 5;
     ${mediaHelper().tablet(`
       grid-row: 2 / 3;
     `)}`}
+          rowInverse={true}
           bgColor="white"
-          color="black"
+          fontColor="black"
         >
           <ColBlock
             headerText={text.macCol.headerText}
@@ -129,8 +143,23 @@ export const Layout = () => {
             isGradientBorder={false}
           />
         </ColWrapper>
-        <div className="column__photo-maker"></div>
-        <div className="column__design"></div>
+        <ColBg bg={cameraBg} rowInverse={false} />
+        <ColWrapper
+          row={`grid-row: 5 / 6;
+    ${mediaHelper().tablet(`
+      grid-row: 3 / 4;
+    `)}`}
+          rowInverse={false}
+          bgColor="white"
+          fontColor="black"
+        >
+          <ColBlock
+            headerText={text.cameraCol.headerText}
+            pText={text.cameraCol.pText}
+            linkText={text.cameraCol.linkText}
+            isGradientBorder={false}
+          />
+        </ColWrapper>
       </Grid>
     </>
   )
