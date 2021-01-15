@@ -6,7 +6,7 @@ import { Arrow } from './Arrow'
 const StyledColBlock = styled.article<{
   isGradientBorder: boolean
 }>`
-  width: 60%;
+  
 
   margin-left: 4rem;
   padding: 3rem 0;
@@ -47,7 +47,8 @@ padding: 0 5rem;
   }`
       : ''}
   h1 {
-    font-size: 2.9rem;
+    font-size: 4rem;
+    padding-right: 10rem;
     text-transform: uppercase;
     letter-spacing: 4px;
     ${mediaHelper().tablet(`
@@ -62,7 +63,8 @@ font-size: 2.5rem;
     line-height: 2;
     color: gray;
     margin: 2rem 0;
-    font-size: 1.45rem;
+    font-size: 1.8rem;
+    padding-right: 2.8rem;
     ${mediaHelper().tablet(`
   line-height: 1.85;
   color: gray;
@@ -84,12 +86,9 @@ font-size: 2.5rem;
     letter-spacing: 5px;
     .arrow {
       display: inline-block;
+      font-size: 4rem;
       margin-left: 2rem;
-      svg {
-        ${mediaHelper().tablet(`
-        width: 50px;
-    
-        `)}
+      
       }
     }
   }
@@ -106,10 +105,7 @@ export const ColBlock: FunctionComponent<{
     <h1>{headerText}</h1>
     <p>{pText}</p>
     <h3>
-      <a href="">{linkText}</a>{' '}
-      <span className="arrow">
-        <Arrow />
-      </span>
+      <a href="">{linkText}</a> <Arrow />
     </h3>
   </StyledColBlock>
 )
