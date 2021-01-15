@@ -7,20 +7,20 @@ import { mediaHelper } from '../lib/responsive'
 import personBg from '../images/person.jpg'
 import macBg from '../images/mac.jpg'
 import cameraBg from '../images/camera.jpg'
+import mountain from '../images/mountain.jpg'
 import { ColBlock } from './ColBlock'
 import text from '../text.json'
 import { ColBg } from './ColBg'
+import { ColStory } from './ColStory'
 
 const Grid = styled.div`
   display: grid;
   align-items: center;
 
   grid-template-columns: repeat(100, 1fr);
-  grid-template-rows: 592px auto repeat(2,547px auto);
+  grid-template-rows: 592px auto repeat(2,547px auto); 
   ${mediaHelper().tablet(`
-  grid-template-rows: repeat(3,650px);
-  
-  
+  grid-template-rows: repeat(3,650px) 
   `)}
   .column__lake {
     grid-column: 1 / 101;
@@ -145,7 +145,7 @@ export const Layout = () => {
         </ColWrapper>
         <ColBg bg={cameraBg} rowInverse={false} />
         <ColWrapper
-          row={`grid-row: 5 / 6;
+          row={`grid-row: 6 / 7;
     ${mediaHelper().tablet(`
       grid-row: 3 / 4;
     `)}`}
@@ -160,6 +160,18 @@ export const Layout = () => {
             isGradientBorder={false}
           />
         </ColWrapper>
+        <ColStory
+          bg={mountain}
+          colPlace={`${mediaHelper().tablet(`
+        grid-column: 1 / 50;
+        
+        `)}
+        ${mediaHelper().desktop(`
+          grid-column: 1 / 25;
+        `)}`}
+          name={text.storyColWalker.name}
+          author={text.storyColWalker.author}
+        />
       </Grid>
     </>
   )
