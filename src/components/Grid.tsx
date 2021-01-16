@@ -8,6 +8,10 @@ import personBg from '../images/person.jpg'
 import macBg from '../images/mac.jpg'
 import cameraBg from '../images/camera.jpg'
 import mountain from '../images/mountain.jpg'
+import walker from '../images/walker.jpg'
+import tower from '../images/tower.jpg'
+
+import city from '../images/city.jpg'
 import { ColBlock } from './ColBlock'
 import text from '../text.json'
 import { ColBg } from './ColBg'
@@ -169,8 +173,44 @@ export const Layout = () => {
         ${mediaHelper().desktop(`
           grid-column: 1 / 25;
         `)}`}
+          name={text.storyColMountain.name}
+          author={text.storyColMountain.author}
+        />
+        <ColStory
+          bg={city}
+          colPlace={`${mediaHelper().tablet(`
+        grid-column: 50 / 101;
+        
+        `)}
+        ${mediaHelper().desktop(`
+          grid-column: 25 / 50;
+        `)}`}
+          name={text.storyColCity.name}
+          author={text.storyColCity.author}
+        />
+        <ColStory
+          bg={walker}
+          colPlace={`${mediaHelper().tablet(`
+        grid-column: 1 / 50;
+        
+        `)}
+        ${mediaHelper().desktop(`
+          grid-column: 50 / 75;
+        `)}`}
           name={text.storyColWalker.name}
           author={text.storyColWalker.author}
+        />
+        <ColStory
+          bg={tower}
+          colPlace={`${mediaHelper().tablet(`
+        grid-column: 50 / 101;
+        
+        `)}
+        ${mediaHelper().desktop(`
+          grid-column: 75 / 101;
+        `)}`}
+          name={text.storyColBuilding.name}
+          author={text.storyColBuilding.author}
         />
       </Grid>
     </>

@@ -30,6 +30,9 @@ background-image: url(${(props) => props.bg});
   }
   .story-name {
     padding: 2rem 0;
+    ${mediaHelper().tablet(`
+        padding: 1rem 0;
+    `)}
     border-bottom: 0.5px solid rgb(255 255 255 / 37%);
     .story-name__name {
       font-size: 2rem;
@@ -37,10 +40,18 @@ background-image: url(${(props) => props.bg});
       letter-spacing: 1px;
       margin-bottom: 1rem;
       text-transform: capitalize;
+      ${mediaHelper().tablet(`
+        font-size: 1.25rem;
+        margin-bottom: .5rem;
+      `)}
     }
     p {
       font-size: 1.5rem;
       font-weight: 300;
+      ${mediaHelper().tablet(`
+        font-size: 1rem;
+      
+      `)}
     }
     .story-name__author {
       text-transform: capitalize;
@@ -51,8 +62,14 @@ background-image: url(${(props) => props.bg});
     justify-content: space-between;
     align-items: center;
     margin-top: 1rem;
-    .story-read__title  {
+    ${mediaHelper().tablet(`
+        margin-top: .5rem;
+    `)}
+    .story-read__title {
       font-size: 1.35rem;
+      ${mediaHelper().tablet(`
+        font-size: 1rem
+      `)}
       font-weight: 400;
       text-transform: uppercase;
       letter-spacing: 4px;
