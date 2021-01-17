@@ -1,5 +1,6 @@
 import { FunctionComponent } from 'react'
 import styled from 'styled-components'
+import { mediaHelper } from '../lib/responsive'
 
 const StyledColGoods = styled.article<{ col: string }>`
   ${(props) => props.col};
@@ -11,17 +12,36 @@ const StyledColGoods = styled.article<{ col: string }>`
   height: 641px;
   background-color: white;
   text-align: center;
+  ${mediaHelper().desktop(`
+    padding: 0 2.7rem;
+  
+  `)}
   .title {
     font-size: 2rem;
+    font-weight: 600;
+    ${mediaHelper().tablet(`
+      font-size: 1.5rem;
+    `)}
     margin-bottom: 1rem;
     text-transform: capitalize;
   }
   .icon {
     font-size: 9rem;
+    margin-bottom: ${140 / 16}rem;
+    ${mediaHelper().tablet(`
+      margin-bottom: 3.2rem;
+    `)}
   }
   .text {
     font-size: 1.8rem;
+    ${mediaHelper().tablet(`
+      font-size: 1.2rem;
+    `)}
     padding: 0 6rem;
+    ${mediaHelper().desktop(`
+    padding: 0;
+  
+  `)}
     color: rgb(123 123 123 / 95%);
     line-height: 2;
   }
