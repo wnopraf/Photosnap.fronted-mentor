@@ -29,5 +29,17 @@
   "storyColBuilding": {
     "name": "architercutals",
     "author": "samantha brooke"
+  },
+  "ColGoodsResp": {
+    "title": "100% responsive",
+    "text": "No matter which the device your´re on, our site is fully responsive and stories look beatiful on any screen."
+  },
+  "ColGoodsNoLimit": {
+    "title": "no photo upload limit",
+    "text": "Our tool has no limits on uploads or bandwidth. Freely upload in bulk and share all of your stories in one go."
+  },
+  "ColGoodsAvaliable": {
+    "title": "avaliable to embed",
+    "text": "Embed Tweets, Facebook posts, Instabfam media, Vimeo or YouTube videos, Google Maps, and more."
   }
 }
