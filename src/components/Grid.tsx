@@ -16,6 +16,10 @@ import { ColBlock } from './ColBlock'
 import text from '../text.json'
 import { ColBg } from './ColBg'
 import { ColStory } from './ColStory'
+import { DiResponsive } from 'react-icons/di'
+import { TiInfinity, TiInfinityOutline } from 'react-icons/ti'
+import { MdDevicesOther } from 'react-icons/md'
+import { ColGoods } from './ColGoods'
 
 const Grid = styled.div`
   display: grid;
@@ -211,6 +215,30 @@ export const Layout = () => {
         `)}`}
           name={text.storyColBuilding.name}
           author={text.storyColBuilding.author}
+        />
+        <ColGoods
+          Icon={DiResponsive}
+          col={`grid-column: 1 / 101; ${mediaHelper().desktop(
+            `grid-column: 1 / 33`
+          )}`}
+          text={text.ColGoodsResp.text}
+          title={text.ColGoodsResp.title}
+        />
+        <ColGoods
+          Icon={TiInfinityOutline}
+          col={`grid-column: 1 / 101; ${mediaHelper().desktop(
+            `grid-column: 33 / 66`
+          )}`}
+          text={text.ColGoodsNoLimit.text}
+          title={text.ColGoodsNoLimit.title}
+        />
+        <ColGoods
+          Icon={MdDevicesOther}
+          col={`grid-column: 1 / 101; ${mediaHelper().desktop(
+            `grid-column: 66 / 101`
+          )}`}
+          text={text.ColGoodsAvaliable.text}
+          title={text.ColGoodsAvaliable.title}
         />
       </Grid>
     </>
