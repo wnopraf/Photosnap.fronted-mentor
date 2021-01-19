@@ -7,13 +7,13 @@ export default () => {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
-      width="35"
-      height="32"
+      width="1em"
+      height="1em"
       viewBox="0 0 35 32"
       className="logo"
     >
       <defs>
-        <style>{`.a{fill:url(#a);}`}</style>
+        <style>{`.bg-gradient{fill:url(#a);}`}</style>
         <linearGradient
           id="a"
           x1="0.762"
@@ -28,7 +28,7 @@ export default () => {
           <stop offset="1" stop-color="gray" />
         </linearGradient>
       </defs>
-      <path className="a" d="M17.5,0,35,32H0Z" />
+      <path className="bg-gradient" d="M17.5,0,35,32H0Z" />
     </svg>
   )
 }
