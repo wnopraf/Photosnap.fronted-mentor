@@ -114,133 +114,131 @@ const ColWrapper = styled.div<{
 `
 export const Layout = () => {
   return (
-    <>
-      <Grid>
-        <ColBg bg={personBg} rowInverse={false} />
-        <ColWrapper
-          row={`grid-row: 2 / 3;
+    <Grid>
+      <ColBg bg={personBg} rowInverse={false} />
+      <ColWrapper
+        row={`grid-row: 2 / 3;
     ${mediaHelper().tablet(`
       grid-row: 1 / 2;
     `)}`}
-          rowInverse={false}
-          bgColor="black"
-          fontColor="white"
-        >
-          <ColBlock
-            headerText={text.lakeCol.headerText}
-            pText={text.lakeCol.pText}
-            linkText={text.lakeCol.linkText}
-            isGradientBorder={true}
-          />
-        </ColWrapper>
+        rowInverse={false}
+        bgColor="black"
+        fontColor="white"
+      >
+        <ColBlock
+          headerText={text.lakeCol.headerText}
+          pText={text.lakeCol.pText}
+          linkText={text.lakeCol.linkText}
+          isGradientBorder={true}
+        />
+      </ColWrapper>
 
-        <ColBg bg={macBg} rowInverse={true} />
-        <ColWrapper
-          row={`grid-row: 4 / 5;
+      <ColBg bg={macBg} rowInverse={true} />
+      <ColWrapper
+        row={`grid-row: 4 / 5;
     ${mediaHelper().tablet(`
       grid-row: 2 / 3;
     `)}`}
-          rowInverse={true}
-          bgColor="white"
-          fontColor="black"
-        >
-          <ColBlock
-            headerText={text.macCol.headerText}
-            pText={text.macCol.pText}
-            linkText={text.macCol.linkText}
-            isGradientBorder={false}
-          />
-        </ColWrapper>
-        <ColBg bg={cameraBg} rowInverse={false} />
-        <ColWrapper
-          row={`grid-row: 6 / 7;
+        rowInverse={true}
+        bgColor="white"
+        fontColor="black"
+      >
+        <ColBlock
+          headerText={text.macCol.headerText}
+          pText={text.macCol.pText}
+          linkText={text.macCol.linkText}
+          isGradientBorder={false}
+        />
+      </ColWrapper>
+      <ColBg bg={cameraBg} rowInverse={false} />
+      <ColWrapper
+        row={`grid-row: 6 / 7;
     ${mediaHelper().tablet(`
       grid-row: 3 / 4;
     `)}`}
-          rowInverse={false}
-          bgColor="white"
-          fontColor="black"
-        >
-          <ColBlock
-            headerText={text.cameraCol.headerText}
-            pText={text.cameraCol.pText}
-            linkText={text.cameraCol.linkText}
-            isGradientBorder={false}
-          />
-        </ColWrapper>
-        <ColStory
-          bg={mountain}
-          colPlace={`${mediaHelper().tablet(`
+        rowInverse={false}
+        bgColor="white"
+        fontColor="black"
+      >
+        <ColBlock
+          headerText={text.cameraCol.headerText}
+          pText={text.cameraCol.pText}
+          linkText={text.cameraCol.linkText}
+          isGradientBorder={false}
+        />
+      </ColWrapper>
+      <ColStory
+        bg={mountain}
+        colPlace={`${mediaHelper().tablet(`
         grid-column: 1 / 50;
         
         `)}
         ${mediaHelper().desktop(`
           grid-column: 1 / 25;
         `)}`}
-          name={text.storyColMountain.name}
-          author={text.storyColMountain.author}
-        />
-        <ColStory
-          bg={city}
-          colPlace={`${mediaHelper().tablet(`
+        name={text.storyColMountain.name}
+        author={text.storyColMountain.author}
+      />
+      <ColStory
+        bg={city}
+        colPlace={`${mediaHelper().tablet(`
         grid-column: 50 / 101;
         
         `)}
         ${mediaHelper().desktop(`
           grid-column: 25 / 50;
         `)}`}
-          name={text.storyColCity.name}
-          author={text.storyColCity.author}
-        />
-        <ColStory
-          bg={walker}
-          colPlace={`${mediaHelper().tablet(`
+        name={text.storyColCity.name}
+        author={text.storyColCity.author}
+      />
+      <ColStory
+        bg={walker}
+        colPlace={`${mediaHelper().tablet(`
         grid-column: 1 / 50;
         
         `)}
         ${mediaHelper().desktop(`
           grid-column: 50 / 75;
         `)}`}
-          name={text.storyColWalker.name}
-          author={text.storyColWalker.author}
-        />
-        <ColStory
-          bg={tower}
-          colPlace={`${mediaHelper().tablet(`
+        name={text.storyColWalker.name}
+        author={text.storyColWalker.author}
+      />
+      <ColStory
+        bg={tower}
+        colPlace={`${mediaHelper().tablet(`
         grid-column: 50 / 101;
         
         `)}
         ${mediaHelper().desktop(`
           grid-column: 75 / 101;
         `)}`}
-          name={text.storyColBuilding.name}
-          author={text.storyColBuilding.author}
-        />
-        <ColGoods
-          Icon={DiResponsive}
-          col={`grid-column: 1 / 101; ${mediaHelper().desktop(
-            `grid-column: 1 / 33`
-          )}`}
-          text={text.ColGoodsResp.text}
-          title={text.ColGoodsResp.title}
-        />
-        <ColGoods
-          Icon={TiInfinityOutline}
-          col={`grid-column: 1 / 101; ${mediaHelper().desktop(
-            `grid-column: 33 / 66`
-          )}`}
-          text={text.ColGoodsNoLimit.text}
-          title={text.ColGoodsNoLimit.title}
-        />
-        <ColGoods
-          Icon={MdDevicesOther}
-          col={`grid-column: 1 / 101; ${mediaHelper().desktop(
-            `grid-column: 66 / 101`
-          )}`}
-          text={text.ColGoodsAvaliable.text}
-          title={text.ColGoodsAvaliable.title}
-        />
-      </Grid>
-    </>
+        name={text.storyColBuilding.name}
+        author={text.storyColBuilding.author}
+      />
+      <ColGoods
+        Icon={DiResponsive}
+        col={`grid-column: 1 / 101; ${mediaHelper().desktop(
+          `grid-column: 1 / 33`
+        )}`}
+        text={text.ColGoodsResp.text}
+        title={text.ColGoodsResp.title}
+      />
+      <ColGoods
+        Icon={TiInfinityOutline}
+        col={`grid-column: 1 / 101; ${mediaHelper().desktop(
+          `grid-column: 33 / 66`
+        )}`}
+        text={text.ColGoodsNoLimit.text}
+        title={text.ColGoodsNoLimit.title}
+      />
+      <ColGoods
+        Icon={MdDevicesOther}
+        col={`grid-column: 1 / 101; ${mediaHelper().desktop(
+          `grid-column: 66 / 101`
+        )}`}
+        text={text.ColGoodsAvaliable.text}
+        title={text.ColGoodsAvaliable.title}
+      />
+    </Grid>
   )
 }
