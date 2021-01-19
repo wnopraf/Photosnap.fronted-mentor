@@ -1,6 +1,7 @@
 import { HiOutlineMenuAlt4 } from 'react-icons/hi'
 import styled from 'styled-components'
 import { mediaHelper } from '../lib/responsive'
+import { BrandLogo } from './BrandLogo'
 import { Container } from './Container'
 import Logo from './Logo'
 
@@ -8,34 +9,12 @@ const StyledHeader = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 3rem;
+  padding: 0 1rem;
+
   ${mediaHelper().tablet(`
     margin: 0 -1rem;
   `)}
-  .column__logo {
-    padding: 2rem 0;
 
-    ${mediaHelper().tablet(`
-      width: 30%;
-      padding: 1.4rem 0;
-    `)}
-    display: flex;
-    align-items: center;
-    h1 {
-      text-transform: uppercase;
-      font-family: lato, 'sans serif';
-      font-weight: 900;
-      font-size: 1.35rem;
-      margin: 0;
-      letter-spacing: 1.5px;
-    }
-    .logo {
-      margin-right: 0.5rem;
-      width: 16px;
-      height: 15px;
-      justify-self: center;
-    }
-  }
   .column__nav {
     nav {
       display: none;
@@ -87,10 +66,7 @@ const StyledHeader = styled.header`
 export const Header = () => (
   <Container>
     <StyledHeader>
-      <div className="column__logo">
-        <Logo />
-        <h1>photosnap</h1>
-      </div>
+      <BrandLogo isDark={true} />
       <div className="column__nav">
         <button>
           <HiOutlineMenuAlt4 />
