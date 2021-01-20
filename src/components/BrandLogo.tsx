@@ -21,10 +21,18 @@ const StyledBrandLogo = styled.div<{ isDark: boolean }>`
     margin: 0;
     letter-spacing: 1.5px;
     color: ${(props) => (props.isDark ? 'black' : 'white')};
+    ${mediaHelper().tablet(`
+        font-size: 1.3rem;
+    
+    `)}
   }
   .logo {
     margin-right: 0.5rem;
     justify-self: center;
+    ${mediaHelper().tablet(`
+        font-size: 1.1rem;
+    
+    `)}
   }
 `
 
