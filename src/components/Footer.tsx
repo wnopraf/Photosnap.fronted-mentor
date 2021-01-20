@@ -168,13 +168,13 @@ const StyledFooter = styled.footer`
     }
   }
 `
-export const Footer = () => {
+export default () => {
   return (
     <FooterWrapper>
       <Container>
         <StyledFooter>
           <div className="col-1">
-            <BrandLogo />
+            <BrandLogo isDark={false} />
             <nav className="social-nav">
               <AiFillFacebook />
               <span className="youtube">
